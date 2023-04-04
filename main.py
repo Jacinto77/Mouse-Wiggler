@@ -1,13 +1,12 @@
 import pyautogui as gui
 import time
 
-minutes = 0.1
-seconds = minutes * 60
-
 
 while True:
     user_input = input("Enter delay time in minutes:"
-                       "Note: 0.1 = 10 seconds, 1 = 60 seconds, etc\n>")
+                       "Note: 0.1 = 10 seconds, 1 = 60 seconds, etc\n"
+                       "Default delay time is 10 minutes, press Enter through"
+                       "this prompt to accept the default value.\n>")
 
     if user_input.isnumeric():
         if int(user_input) <= 0:
@@ -23,6 +22,8 @@ while True:
         user_input = 10
 
     minutes = user_input
+    # minutes = 0.1
+    seconds = minutes * 60
 
     print("To quit, use CTRL-C, or simply close this window.")
     while True:
